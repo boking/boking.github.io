@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简历 | Senior SRE & 运维专家</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #555555;
+            --text-light: #888888;
+            --border-color: #e5e7eb;
+            --block-bg: #f9fafb;
+            --accent-color: #2563eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* 头部样式 */
+        header {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid var(--text-main);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-align: right;
+        }
+
+        .contact-info a {
+            color: var(--text-main);
+            text-decoration: none;
+            border-bottom: 1px solid var(--text-light);
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        /* 通用板块样式 */
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 技能矩阵排版 */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-card {
+            background-color: var(--block-bg);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        .skill-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .skill-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            list-style-type: none;
+        }
+
+        /* 经历与项目排版（双栏/时间轴逻辑） */
+        .timeline-item {
+            margin-bottom: 25px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .item-title {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .item-title span {
+            font-weight: normal;
+            color: var(--text-light);
+            margin-left: 5px;
+        }
+
+        .item-date {
+            font-size: 13px;
+            color: var(--text-light);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .item-summary {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 8px;
+            background: #fdfdfd;
+            border-left: 3px solid #d1d5db;
+            padding-left: 8px;
+        }
+
+        ul.bullets {
+            list-style-type: square;
+            padding-left: 18px;
+        }
+
+        ul.bullets li {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        ul.bullets li strong {
+            color: var(--text-main);
+        }
+
+        /* 核心运维数据高亮 */
+        .metrics-row {
+            display: flex;
+            gap: 15px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+
+        .metric-box {
+            border: 1px dashed var(--text-light);
+            padding: 6px 12px;
+            border-radius: 3px;
+            font-size: 12px;
+            color: var(--text-muted);
+            background: #fff;
+        }
+
+        .metric-box strong {
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        /* 个人评价区 */
+        .summary-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 20px 15px; }
+            .header-top { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .contact-info { text-align: left; }
+            h1 { font-size: 26px; }
+        }
+
+        /* 打印时隐藏不必要元素 */
+        @media print {
+            body { padding: 0; }
+            .skill-card { background: none; page-break-inside: avoid; }
+            .timeline-item { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="header-top">
+            <div>
+                <h1>姓名 / 脱敏</h1>
+                <div class="subtitle">资深 SRE / 运维架构师 (10+年经验)</div>
+            </div>
+            <div class="contact-info">
+                <div>手机：XXXXX | 邮箱：XXXXXX</div>
+                <div>意向岗位：SRE / 运维专家 / 云原生基础设施架构</div>
+                <div><a href="./resume.pdf" target="_blank">💾 下载纯文本 PDF 版</a></div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h2>🎓 教育背景</h2>
+        <div class="item-header">
+            <div class="item-title">XXXXX大学<span>| 信息安全专业 | 本科</span></div>
+            <div class="item-date">2010.09 - 2014.06</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🛠️ 专业技能矩阵</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>云平台运维 & 成本</h3>
+                <p>熟练使用 <strong>AWS</strong>（EC2, IAM, Security Group, CloudWatch）进行资源管控与成本优化；熟悉阿里云、腾讯云等主流云平台运维。</p>
+            </div>
+            <div class="skill-card">
+                <h3>容器编排 & 云原生</h3>
+                <p>精通 <strong>Kubernetes</strong> 集群架构、部署、调优与故障排查（曾管理 <strong>1000+ 节点</strong>规模）；精通 Docker 镜像优化及生命周期管理；具 Mesos/Marathon 早期实践经验。</p>
+            </div>
+            <div class="skill-card">
+                <h3>可观测性体系</h3>
+                <p>精通 <strong>Prometheus + Grafana</strong> 监控体系搭建、告警收敛及性能调优；精通 <strong>ELK Stack</strong> 分布式日志平台的生产级部署与全链路优化；熟练使用 Zabbix、Nagios。</p>
+            </div>
+            <div class="skill-card">
+                <h3>自动化与配置管理</h3>
+                <p>精通 <strong>Ansible / Salt</strong> 自动化配置工具，编写大规模高复用 Playbook；熟练应用 <strong>Ansible Tower</strong> 规范化、标准化运维流程；掌握 Puppet 系统管理。</p>
+            </div>
+            <div class="skill-card">
+                <h3>CI/CD 工具链</h3>
+                <p>精通基于 <strong>Jenkins Pipeline</strong> 脚本化构建大规模 CI/CD 流程；熟练集成 GitLab CI、Maven 等工具链；深度实践 <strong>K8s + Jenkins</strong> 的自动化发布与秒级回滚。</p>
+            </div>
+            <div class="skill-card">
+                <h3>中间件 & 负载均衡</h3>
+                <p>精通 <strong>Nginx, HAProxy, LVS</strong> 高可用架构设计；具备 <strong>Kafka, Redis</strong> 大型集群的高并发高吞吐场景调优及全自动化 Rebalance 维护经验；熟悉 JVM 参数调优。</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>💼 工作经历 & 项目成果</h2>
+
+        <div class="timeline-item">
+            <div class="item-header">
+                <div class="item-title">XXXXX <span>| SRE 专家</span></div>
+                <div class="item-date">2026.04 – 至今</div>
+            </div>
+            <div class="item-summary">职责：线上高并发平台稳定性保障，主导 AIOps 智能化运维体系落地。</div>
+            <ul class="bullets">
+                <li><strong>AI 运维建设（AIOps）</strong>：基于 <strong>OpenClaw</strong> 框架在线部署智能运维平台。引入 AI 智能分析生产环境报警与分布式日志监控，实现故障特征自动匹配与告警收敛，大幅缩减无效告警干扰。</li>
+                <li><strong>高可用保障</strong>：负责 2026 年度线上大型业务平台基础设施高可用，保障多活链路健康度。</li>
+            </ul>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-header">
+                <div class="item-title">XXXXX <span>| 资深 SRE 工程师</span></div>
+                <div class="item-date">2019.06 – 2025.12</div>
+            </div>
+            <div class="item-summary">职责：负责高并发广告平台全链路运维，管理生产服务器 2000+ 台。</div>
+            <div class="metrics-row">
+                <div class="metric-box">SLA: <strong>99.95%</strong></div>
+                <div class="metric-box">响应时间: <strong>&lt; 5分钟</strong></div>
+                <div class="metric-box">峰值 QPS: <strong>10w+</strong></div>
+                <div class="metric-box">云成本降低: <strong>25%</strong></div>
+            </div>
+            <ul class="bullets">
+                <li><strong>系统稳定性保障</strong>：管理 <strong>2000+ 台</strong> 服务器规模的广告平台，系统可用性达到 <strong>99.95%</strong>。通过 Prometheus + Grafana 实现全维指标监控，核心故障响应时间压缩至 <strong>5分钟内</strong>。</li>
+                <li><strong>性能优化与接入治理</strong>：深度优化 Tomcat 技术栈，通过针对性 JVM 参数调优、连接池参数优化，使应用平均响应时间<strong>降低 30%</strong>；实施 <strong>GEO Mapping</strong> 策略引导用户就近接入，全局延迟降低 <strong>40%</strong>。</li>
+                <li><strong>Kafka 中间件集群治理</strong>：维护大规模 Kafka 数据流平台，实现 Kafka 集群的弹性扩缩容与 Topic Partition <strong>自动化 Rebalance</strong>，平稳承载峰值 <strong>10w+ QPS</strong> 的突发流量，扩容耗时由 2小时缩短至 <strong>30分钟</strong>。</li>
+                <li><strong>AWS 成本优化</strong>：负责大规模 AWS 资源生命周期管理。通过精细化 IAM 权限最小化配置、Security Group 隔离策略及组合利用 <strong>Reserved Instance 与 Spot Instance</strong> 策略，成功为公司砍掉 <strong>25%</strong> 的公有云账单成本。</li>
+            </ul>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-header">
+                <div class="item-title">XXXXX <span>| 运维工程师</span></div>
+                <div class="item-date">2017.02 - 2019.06</div>
+            </div>
+            <div class="item-summary">职责：主导公司整体业务的容器化架构改造与持续集成平台搭建。</div>
+            <div class="metrics-row">
+                <div class="metric-box">容器化比例: <strong>80%</strong></div>
+                <div class="metric-box">资源利用率: <strong>40% ➔ 75%</strong></div>
+                <div class="metric-box">MTTR: <strong>&lt; 15分钟</strong></div>
+            </div>
+            <ul class="bullets">
+                <li><strong>容器化平台建设</strong>：主导高可用 <strong>Kubernetes 集群</strong>（3 Master + 多 Node）的规划、部署与核心运维，实现 <strong>80%</strong> 业务应用容器化迁移，物理/虚拟服务器资源利用率从 40% 飙升至 <strong>75%</strong>。</li>
+                <li><strong>DevOps 流程进化</strong>：基于 <strong>K8s + Jenkins Pipeline</strong> 落地全自动 CI/CD 平台，打通代码提交到生产部署的无人值守全流程。发布频率由每周 2次提升至<strong>每天多次</strong>，发布失败率骤降 <strong>60%</strong>。</li>
+                <li><strong>负载层与多活优化</strong>：维护 Nginx 和 HAProxy 负载层，支撑峰值 <strong>5w+ QPS</strong>。利用平滑重启机制实现零流量损失变更；对 Redis 与 Kafka 集群实施拆分治理，实现多活容灾，服务可用性达 99.9%，平均故障恢复时间（MTTR）控制在 <strong>15 分钟内</strong>。</li>
+            </ul>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-header">
+                <div class="item-title">早期工作经历 <span>| 运维工程师</span></div>
+                <div class="item-date">2013.10 - 2017.02</div>
+            </div>
+            <ul class="bullets">
+                <li><strong>在 2015.04 - 2017.02 期间</strong>：从零搭建完整运维基础设施，包括 LDAP 统一认证、Centreon + Nagios 监控、内网自建 DNS（Bind）以及 HAProxy + LVS 负载层。使用 XenServer 进行虚拟化重构，物理机利用率提升至 80%，硬件成本缩减 40%。</li>
+                <li><strong>在 2013.10 - 2015.04 期间</strong>：通过 Zabbix 落地全网网络与服务层监控，实现 7×24 业务不间断运行。利用 Puppet 实施初期服务器集群的批量配置与基线管理。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>👤 个人评价</h2>
+        <p class="summary-text">
+            拥有 <strong>10+ 年资深运维经验（含 5+ 年大型互联网大厂一线核心系统运维经历）</strong>，实际管理物理及云端服务器规模超 1000+ 台。
+            深入理解 Linux 操作系统内核原理及分布式架构演进，在<strong>容量规划、架构高可用改造、复杂故障 Troubleshooting、可观测性建设</strong>具备完整的方法论。
+            坚定的 DevOps 与 AIOps 践行者，擅长通过工程化手段（Python/Shell 脚本及 AI 平台）消灭重复的手工运维劳动。
+            具备极强的抗压与应急响应能力，有良好的跨团队协同与技术自驱力。
+        </p>
+    </section>
+</div>
+
+</body>
+</html>
