@@ -35,12 +35,13 @@
             position: relative;
         }
 
-        /* 顶层语言切换按钮样式 */
         .lang-switch-wrapper {
             position: absolute;
             top: 0;
             right: 0;
             z-index: 10;
+            display: flex;
+            gap: 10px;
         }
 
         .lang-btn {
@@ -60,12 +61,11 @@
             color: var(--bg-color);
         }
 
-        /* 头部样式 */
         header {
             margin-bottom: 35px;
             padding-bottom: 25px;
             border-bottom: 2px solid var(--text-main);
-            padding-right: 100px; /* 留出按钮空间 */
+            padding-right: 220px;
         }
 
         .header-top {
@@ -95,7 +95,6 @@
             text-align: right;
         }
 
-        /* 通用板块样式 */
         section {
             margin-bottom: 35px;
         }
@@ -109,7 +108,6 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* 技能矩阵排版 */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -135,7 +133,6 @@
             color: var(--text-muted);
         }
 
-        /* 经历与项目排版 */
         .timeline-item {
             margin-bottom: 25px;
         }
@@ -188,7 +185,6 @@
             line-height: 1.5;
         }
 
-        /* 核心运维数据高亮 */
         .metrics-row {
             display: flex;
             gap: 15px;
@@ -221,7 +217,7 @@
             .header-top { flex-direction: column; align-items: flex-start; gap: 10px; }
             .contact-info { text-align: left; }
             h1 { font-size: 26px; }
-            .lang-switch-wrapper { position: relative; display: block; margin-bottom: 15px; text-align: right; }
+            .lang-switch-wrapper { position: relative; display: flex; margin-bottom: 15px; justify-content: flex-end; }
             header { padding-right: 0; }
         }
     </style>
@@ -230,6 +226,9 @@
 
 <div class="container">
     <div class="lang-switch-wrapper">
+        <a href="resume.pdf" download="SRE_Resume_Boking.pdf" style="text-decoration: none;">
+            <button class="lang-btn" data-i18n="btn_download">下载 PDF</button>
+        </a>
         <button class="lang-btn" id="langBtn" onclick="toggleLanguage()">English</button>
     </div>
 
@@ -306,6 +305,19 @@
                 <li><span data-i18n="exp2_l2"><strong>性能优化</strong>：深度优化 Tomcat 技术栈，通过针对性 JVM 参数调优，使应用平均响应时间<strong>降低 30%</strong>。</span></li>
             </ul>
         </div>
+
+        <div class="timeline-item">
+            <div class="item-header">
+                <div class="item-title">XXXXX <span data-i18n="exp3_role">| 高级运维开发工程师 / 基础设施负责人</span></div>
+                <div class="item-date">2014.07 – 2019.05</div>
+            </div>
+            <div class="item-summary" data-i18n="exp3_summary">职责：负责企业核心虚拟化集群与私有云基础设施搭建，推进基础设施自动化建设。</div>
+            <ul class="bullets">
+                <li data-i18n="exp3_l1"><strong>自动化运维体系</strong>：基于 Shell 和 Python 编写了大量底层自动化巡检与环境初始化脚本，大幅降低手工误操作率。</li>
+                <li data-i18n="exp3_l2"><strong>配置管理升级</strong>：主导将传统手动维护升级为基于 <strong>Ansible</strong> 的声明式配置管理，实现了百台级别服务器的配置秒级同步与基线合规。</li>
+                <li data-i18n="exp3_l3"><strong>基础设施迁移</strong>：参与核心业务从物理机机房向云端混合架构的灰度平滑迁移，确保了迁移期间数据无丢失、业务无中断。</li>
+            </ul>
+        </div>
     </section>
 
     <section>
@@ -317,9 +329,9 @@
 </div>
 
 <script>
-    // 1. 双语字典数据集
     const i18nData = {
         zh: {
+            btn_download: "下载 PDF",
             btn: "English",
             name: "姓名 / 脱敏",
             title: "资深 SRE / 运维架构师 (10+年经验)",
@@ -346,10 +358,17 @@
             m_qps: "峰值 QPS",
             exp2_l1: "<strong>系统稳定性保障</strong>：管理 <strong>2000+ 台</strong>服务器，生产系统可用性达到 <strong>99.95%</strong>，核心故障响应时间压缩至 <strong>5分钟内</strong>。",
             exp2_l2: "<strong>性能优化</strong>：深度优化 Tomcat 技术栈，通过针对性 JVM 参数调优，使应用平均响应时间<strong>降低 30%</strong>。",
+            // 新增早期中文经历字段
+            exp3_role: "| 高级运维开发工程师 / 基础设施负责人",
+            exp3_summary: "职责：负责企业核心虚拟化集群与私有云基础设施搭建，推进基础设施自动化建设。",
+            exp3_l1: "<strong>自动化运维体系</strong>：基于 Shell 和 Python 编写了大量底层自动化巡检与环境初始化脚本，大幅降低手工误操作率。",
+            exp3_l2: "<strong>配置管理升级</strong>：主导将传统手动维护升级为基于 <strong>Ansible</strong> 的声明式配置管理，实现了百台级别服务器的配置秒级同步与基线合规。",
+            exp3_l3: "<strong>基础设施迁移</strong>：参与核心业务从物理机机房向云端混合架构的灰度平滑迁移，确保了迁移期间数据无丢失、业务无中断。",
             sec_about: "👤 个人评价",
             about_content: "拥有 10+ 年资深运维经验，实际管理物理及云端服务器规模超 1000+ 台。深入理解 Linux 操作系统内核原理及分布式架构演进，在容量规划、架构高可用改造、复杂故障 Troubleshooting 具备完整方法论。坚定的 DevOps 与 AIOps 践行者。"
         },
         en: {
+            btn_download: "Download PDF",
             btn: "中文",
             name: "Name / Confidential",
             title: "Senior SRE / Infrastructure Architect (10+ Years Exp)",
@@ -376,12 +395,17 @@
             m_qps: "Peak QPS",
             exp2_l1: "<strong>Stability Engineering</strong>: Managed <strong>2000+ servers</strong> for the ad platform, maintaining <strong>99.95% SLA</strong> and compressing MTTR to <strong>< 5 minutes</strong>.",
             exp2_l2: "<strong>Performance Tuning</strong>: Deeply optimized Tomcat stack and JVM parameters, reducing average application response latency by <strong>30%</strong>.",
+            // 新增早期英文经历字段
+            exp3_role: "| Sr. DevOps Engineer / Infrastructure Lead",
+            exp3_summary: "Responsibility: Responsible for building core virtualization clusters and private cloud infrastructure, driving operations automation.",
+            exp3_l1: "<strong>Automation Engineering</strong>: Developed various foundational scripts using Shell and Python for automated inspections and environment initialization, significantly minimizing manual operational errors.",
+            exp3_l2: "<strong>Configuration Management</strong>: Led the transition from traditional manual maintenance to declarative configuration management via <strong>Ansible</strong>, achieving second-level config synchronization and baseline compliance across hundreds of servers.",
+            exp3_l3: "<strong>Infrastructure Migration</strong>: Actively participated in migrating core businesses seamlessly from on-premise data centers to hybrid cloud environments, ensuring zero data loss and zero business disruption.",
             sec_about: "👤 Summary",
             about_content: "Seasoned SRE professional with 10+ years of experience managing production infrastructure at scale (1000+ nodes). Strong expertise in Linux kernel internals, distributed systems high-availability architecture, and root-cause troubleshooting. Passionate advocate for DevOps and AIOps automated engineering."
         }
     };
 
-    // 2. 核心渲染函数
     function applyLanguage(lang) {
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
@@ -393,14 +417,12 @@
         localStorage.setItem('preferred_lang', lang);
     }
 
-    // 3. 按钮触发切换
     function toggleLanguage() {
         const currentLang = localStorage.getItem('preferred_lang') || 'zh';
         const nextLang = currentLang === 'zh' ? 'en' : 'zh';
         applyLanguage(nextLang);
     }
 
-    // 4. 初始化加载（检测历史选择或默认中文）
     document.addEventListener('DOMContentLoaded', () => {
         const savedLang = localStorage.getItem('preferred_lang') || 'zh';
         applyLanguage(savedLang);
