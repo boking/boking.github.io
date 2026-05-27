@@ -134,7 +134,7 @@
         }
 
         .timeline-item {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .item-header {
@@ -236,7 +236,7 @@
         <div class="header-top">
             <div>
                 <h1 data-i18n="name">姓名 / 脱敏</h1>
-                <div class="subtitle" data-i18n="title">资深 SRE / 运维架构师 (10+年经验)</div>
+                <div class="subtitle" data-i18n="title">资深 SRE / 运维工程师 (10+年经验)</div>
             </div>
             <div class="contact-info">
                 <div data-i18n="contact">手机：XXXXX | 邮箱：XXXXXX</div>
@@ -308,14 +308,40 @@
 
         <div class="timeline-item">
             <div class="item-header">
-                <div class="item-title">XXXXX <span data-i18n="exp3_role">| 高级运维开发工程师 / 基础设施负责人</span></div>
-                <div class="item-date">2014.07 – 2019.05</div>
+                <div class="item-title">XXXXX <span data-i18n="exp3_role">| 运维工程师</span></div>
+                <div class="item-date">2017.02 - 2019.06</div>
             </div>
-            <div class="item-summary" data-i18n="exp3_summary">职责：负责企业核心虚拟化集群与私有云基础设施搭建，推进基础设施自动化建设。</div>
             <ul class="bullets">
-                <li data-i18n="exp3_l1"><strong>自动化运维体系</strong>：基于 Shell 和 Python 编写了大量底层自动化巡检与环境初始化脚本，大幅降低手工误操作率。</li>
-                <li data-i18n="exp3_l2"><strong>配置管理升级</strong>：主导将传统手动维护升级为基于 <strong>Ansible</strong> 的声明式配置管理，实现了百台级别服务器的配置秒级同步与基线合规。</li>
-                <li data-i18n="exp3_l3"><strong>基础设施迁移</strong>：参与核心业务从物理机机房向云端混合架构的灰度平滑迁移，确保了迁移期间数据无丢失、业务无中断。</li>
+                <li data-i18n="exp3_l1"><strong>容器化平台建设</strong>：主导 Kubernetes 集群的规划、部署和运维，将 80% 的应用容器化，服务器资源利用率从 40% 提升至 75%，实现应用的快速弹性伸缩。</li>
+                <li data-i18n="exp3_l2"><strong>CI/CD 流程优化</strong>：基于 K8s + Jenkins 搭建持续集成部署平台，实现代码提交到生产发布全流程自动化，发布频率从每周 2 次提升至每天多次，发布失败率降低 60%。</li>
+                <li data-i18n="exp3_l3"><strong>高可用架构设计</strong>：维护 Redis 和 Kafka 集群，通过集群拆分和架构优化降低耦合性，实现多活容灾，服务可用性达 99.9%。</li>
+                <li data-i18n="exp3_l4"><strong>负载层优化</strong>：管理 Nginx 和 HAProxy 负载层，支持高并发场景（峰值 QPS 5w+），通过平滑重启机制实现零流量损失的服务更新。</li>
+                <li data-i18n="exp3_l5"><strong>应用运维</strong>：负责应用发布、故障排查（Troubleshooting）、性能调优，平均故障恢复时间（MTTR）控制在 15 分钟内。</li>
+            </ul>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-header">
+                <div class="item-title">XXXX <span data-i18n="exp4_role">| 运维工程师</span></div>
+                <div class="item-date">2015.04 - 2017.02</div>
+            </div>
+            <ul class="bullets">
+                <li data-i18n="exp4_l1"><strong>运维体系搭建</strong>：从零搭建完整运维体系，包括 LDAP 用户认证、Centreon + Nagios 监控系统、内网 DNS（Bind）、HAProxy + LVS 负载均衡，支撑业务快速增长。</li>
+                <li data-i18n="exp4_l2"><strong>虚拟化技术实施</strong>：使用 XenServer 进行虚拟化改造，将物理机资源利用率提升至 80%，降低硬件成本 40%。</li>
+                <li data-i18n="exp4_l3"><strong>容器技术研究</strong>：研究 Docker + Mesos + Zookeeper + Marathon + Consul 容器集群管理方案，为后续容器化转型奠定基础。</li>
+                <li data-i18n="exp4_l4"><strong>批量管理工具选型</strong>：对比测试 Ansible、Salt、Puppet 性能，选定最佳批量管理工具并在生产环境推广使用。</li>
+            </ul>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-header">
+                <div class="item-title">XXXX <span data-i18n="exp5_role">| 运维工程师</span></div>
+                <div class="item-date">2013.10 - 2015.04</div>
+            </div>
+            <ul class="bullets">
+                <li data-i18n="exp5_l1"><strong>监控体系建设</strong>：使用 Zabbix 搭建监控系统，覆盖网络监控、服务监控，7×24 保障业务稳定运行。</li>
+                <li data-i18n="exp5_l2"><strong>自动化管理</strong>：通过 Puppet 实现批量系统管理，提升运维效率。</li>
+                <li data-i18n="exp5_l3"><strong>技术研究</strong>：业余研究 Hadoop、Docker、Salt、Ansible 等新技术，并进行技术选型对比。</li>
             </ul>
         </div>
     </section>
@@ -334,9 +360,9 @@
             btn_download: "下载 PDF",
             btn: "English",
             name: "姓名 / 脱敏",
-            title: "资深 SRE / 运维架构师 (10+年经验)",
+            title: "资深 SRE / 运维工程师 (10+年经验)",
             contact: "手机：XXXXX | 邮箱：XXXXXX",
-            job_intention: "意向岗位：SRE / 运维专家",
+            job_intention: "意向岗位：SRE / 运维工程师",
             sec_edu: "🎓 教育背景",
             edu_univ: "XXXXX大学",
             edu_major: " | 信息安全专业 | 本科",
@@ -358,12 +384,28 @@
             m_qps: "峰值 QPS",
             exp2_l1: "<strong>系统稳定性保障</strong>：管理 <strong>2000+ 台</strong>服务器，生产系统可用性达到 <strong>99.95%</strong>，核心故障响应时间压缩至 <strong>5分钟内</strong>。",
             exp2_l2: "<strong>性能优化</strong>：深度优化 Tomcat 技术栈，通过针对性 JVM 参数调优，使应用平均响应时间<strong>降低 30%</strong>。",
-            // 新增早期中文经历字段
-            exp3_role: "| 高级运维开发工程师 / 基础设施负责人",
-            exp3_summary: "职责：负责企业核心虚拟化集群与私有云基础设施搭建，推进基础设施自动化建设。",
-            exp3_l1: "<strong>自动化运维体系</strong>：基于 Shell 和 Python 编写了大量底层自动化巡检与环境初始化脚本，大幅降低手工误操作率。",
-            exp3_l2: "<strong>配置管理升级</strong>：主导将传统手动维护升级为基于 <strong>Ansible</strong> 的声明式配置管理，实现了百台级别服务器的配置秒级同步与基线合规。",
-            exp3_l3: "<strong>基础设施迁移</strong>：参与核心业务从物理机机房向云端混合架构的灰度平滑迁移，确保了迁移期间数据无丢失、业务无中断。",
+            
+            // 2017 - 2019
+            exp3_role: "| 运维工程师",
+            exp3_l1: "<strong>容器化平台建设</strong>：主导 Kubernetes 集群的规划、部署和运维，将 80% 的应用容器化，服务器资源利用率从 40% 提升至 75%，实现应用的快速弹性伸缩。",
+            exp3_l2: "<strong>CI/CD 流程优化</strong>：基于 K8s + Jenkins 搭建持续集成部署平台，实现代码提交到生产发布全流程自动化，发布频率从每周 2 次提升至每天多次，发布失败率降低 60%。",
+            exp3_l3: "<strong>高可用架构设计</strong>：维护 Redis 和 Kafka 集群，通过集群拆分和架构优化降低耦合性，实现多活容灾，服务可用性达 99.9%。",
+            exp3_l4: "<strong>负载层优化</strong>：管理 Nginx 和 HAProxy 负载层，支持高并发场景（峰值 QPS 5w+），通过平滑重启机制实现零流量损失的服务更新。",
+            exp3_l5: "<strong>应用运维</strong>：负责应用发布、故障排查（Troubleshooting）、性能调优，平均故障恢复时间（MTTR）控制在 15 分钟内。",
+            
+            // 2015 - 2017
+            exp4_role: "| 运维工程师",
+            exp4_l1: "<strong>运维体系搭建</strong>：从零搭建完整运维体系，包括 LDAP 用户认证、Centreon + Nagios 监控系统、内网 DNS（Bind）、HAProxy + LVS 负载均衡，支撑业务快速增长。",
+            exp4_l2: "<strong>虚拟化技术实施</strong>：使用 XenServer 进行虚拟化改造，将物理机资源利用率提升至 80%，降低硬件成本 40%。",
+            exp4_l3: "<strong>容器技术研究</strong>：研究 Docker + Mesos + Zookeeper + Marathon + Consul 容器集群管理方案，为后续容器化转型奠定基础。",
+            exp4_l4: "<strong>批量管理工具选型</strong>：对比测试 Ansible、Salt、Puppet 性能，选定最佳批量管理工具并在生产环境推广使用。",
+            
+            // 2013 - 2015
+            exp5_role: "| 运维工程师",
+            exp5_l1: "<strong>监控体系建设</strong>：使用 Zabbix 搭建监控系统，覆盖网络监控、服务监控，7×24 保障业务稳定运行。",
+            exp5_l2: "<strong>自动化管理</strong>：通过 Puppet 实现批量系统管理，提升运维效率。",
+            exp5_l3: "<strong>技术研究</strong>：业余研究 Hadoop、Docker、Salt、Ansible 等新技术，并进行技术选型对比。",
+            
             sec_about: "👤 个人评价",
             about_content: "拥有 10+ 年资深运维经验，实际管理物理及云端服务器规模超 1000+ 台。深入理解 Linux 操作系统内核原理及分布式架构演进，在容量规划、架构高可用改造、复杂故障 Troubleshooting 具备完整方法论。坚定的 DevOps 与 AIOps 践行者。"
         },
@@ -395,12 +437,28 @@
             m_qps: "Peak QPS",
             exp2_l1: "<strong>Stability Engineering</strong>: Managed <strong>2000+ servers</strong> for the ad platform, maintaining <strong>99.95% SLA</strong> and compressing MTTR to <strong>< 5 minutes</strong>.",
             exp2_l2: "<strong>Performance Tuning</strong>: Deeply optimized Tomcat stack and JVM parameters, reducing average application response latency by <strong>30%</strong>.",
-            // 新增早期英文经历字段
-            exp3_role: "| Sr. DevOps Engineer / Infrastructure Lead",
-            exp3_summary: "Responsibility: Responsible for building core virtualization clusters and private cloud infrastructure, driving operations automation.",
-            exp3_l1: "<strong>Automation Engineering</strong>: Developed various foundational scripts using Shell and Python for automated inspections and environment initialization, significantly minimizing manual operational errors.",
-            exp3_l2: "<strong>Configuration Management</strong>: Led the transition from traditional manual maintenance to declarative configuration management via <strong>Ansible</strong>, achieving second-level config synchronization and baseline compliance across hundreds of servers.",
-            exp3_l3: "<strong>Infrastructure Migration</strong>: Actively participated in migrating core businesses seamlessly from on-premise data centers to hybrid cloud environments, ensuring zero data loss and zero business disruption.",
+            
+            // 2017 - 2019 EN
+            exp3_role: "| Operations Engineer",
+            exp3_l1: "<strong>Container Platform Engineering</strong>: Led the planning, deployment, and operations of Kubernetes clusters, successfully containerizing 80% of applications; improved server resource utilization from 40% to 75% and enabled rapid elastic autoscaling.",
+            exp3_l2: "<strong>CI/CD Workflow Optimization</strong>: Built a continuous integration and deployment platform based on K8s and Jenkins, automating the full lifecycle from code commit to production release; increased release frequency from twice a week to multiple times per day and reduced deployment failure rate by 60%.",
+            exp3_l3: "<strong>High-Availability Architecture</strong>: Maintained production Redis and Kafka clusters; achieved low-coupling and multi-active disaster recovery through cluster sharding and structural tuning, delivering 99.9% service availability.",
+            exp3_l4: "<strong>Load Balancing Optimization</strong>: Managed Nginx and HAProxy layers for high-concurrency traffic (peak QPS 50k+); implemented graceful reload mechanisms to guarantee zero-downtime service updates.",
+            exp3_l5: "<strong>Application Operations</strong>: Responsible for application deployment, production troubleshooting, and performance tuning, keeping Mean Time to Resolution (MTTR) within 15 minutes.",
+            
+            // 2015 - 2017 EN
+            exp4_role: "| Operations Engineer",
+            exp4_l1: "<strong>Infrastructure Bootstrap</strong>: Standardized and built a comprehensive operations ecosystem from scratch, including LDAP user authentication, Centreon + Nagios monitoring, internal DNS (Bind), and HAProxy + LVS load balancing to support rapid business scaling.",
+            exp4_l2: "<strong>Virtualization Implementation</strong>: Conducted virtualization refactoring using XenServer, raising physical server resource utilization to 80% and slicing hardware procurement costs by 40%.",
+            exp4_l3: "<strong>Containerization Research</strong>: Researched and prototyped container cluster management solutions utilizing Docker + Mesos + Zookeeper + Marathon + Consul, laying the architectural foundation for subsequent cloud-native migration.",
+            exp4_l4: "<strong>Automation Tool Evaluation</strong>: Conducted benchmark tests across Ansible, Salt, and Puppet, selecting and standardizing the optimal configuration management tool for full-scale production rollouts.",
+            
+            // 2013 - 2015 EN
+            exp5_role: "| Operations Engineer",
+            exp5_l1: "<strong>Monitoring System Engineering</strong>: Implemented Zabbix Enterprise Monitoring covering networks and core application services, providing 7x24 high-availability guardrails for business operations.",
+            exp5_l2: "<strong>Configuration Management</strong>: Leveraged Puppet for declarative, automated system management at scale, drastically driving up everyday engineering efficiency.",
+            exp5_l3: "<strong>Technology Assessment</strong>: Conducted evaluation and technical benchmarking for emerging technologies including Hadoop, Docker, Salt, and Ansible to guide technical evolution paths.",
+            
             sec_about: "👤 Summary",
             about_content: "Seasoned SRE professional with 10+ years of experience managing production infrastructure at scale (1000+ nodes). Strong expertise in Linux kernel internals, distributed systems high-availability architecture, and root-cause troubleshooting. Passionate advocate for DevOps and AIOps automated engineering."
         }
